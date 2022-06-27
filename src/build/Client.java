@@ -1,4 +1,4 @@
-package Factory;
+package build;
 
 import org.xml.sax.SAXException;
 
@@ -7,10 +7,11 @@ import java.io.IOException;
 
 public class Client {
     public static void main(String[] args) throws ParserConfigurationException, IOException, ClassNotFoundException, SAXException, InstantiationException, IllegalAccessException {
-        Factory factory;
-        Logger logger;
-        factory = (Factory) XmlUtils.getLogger();
-        logger=factory.createLogger();
-        logger.wirteLog();
+        ActorBuilder builder ;
+       builder=(ActorBuilder) XmlUtils111.getBuild();
+       ActorController actorControllerr =new  ActorController() ;
+       Actor actor;
+       actor=actorControllerr.construst(builder);
+        System.out.println(actor);
     }
 }
